@@ -4,6 +4,15 @@
 
 **ViLQA** is a project focused on fine-tuning 2 types of Question Answering models (Extractive Question Answering and Answer Generation) for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on pre-prepared datasets.
 
+## Project Structure
+
+This project implements two approaches to Question Answering:
+
+1. **EQA (Extractive Question Answering)**: This approach extracts the answer directly from the given context.
+2. **AG (Answer Generation)**: This approach generates the answer based on the context and question.
+
+The code for each approach is organized in separate directories (`EQA/` and `AG/`) for clarity and maintainability.
+
 ### I. What is Extractive Question Answering?
 
 Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
