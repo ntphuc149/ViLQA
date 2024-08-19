@@ -13,6 +13,30 @@ This project implements two approaches to Question Answering:
 
 The code for each approach is organized in separate directories (`EQA/` and `AG/`) for clarity and maintainability.
 
+```plaintext
+ViEQA/
+│
+├── EQA/
+|   ├── config.py                 # Project configuration file
+|   ├── train.py                  # Main script for fine-tuning
+|   ├── requirements.txt          # List of required Python libraries
+|   ├── data/
+|   │   ├── __init__.py           # Init module for data
+|   │   ├── data_processing.py    # Data processing script
+|   │   └── dataset/
+|   │       └── ALQAC.csv         # Vietnamese dataset for QA
+|   ├── models/
+|   │   ├── __init__.py           # Init module for models
+|   │   └── eqa_model.py          # Model for Extractive Question Answering
+|   └── utils/
+|       ├── __init__.py           # Init module for utils
+|       └── metrics.py            # Script for calculating model metrics
+└── AG/
+    ├── ...
+    ├── ...
+    └── ...
+```
+
 ### I. What is Extractive Question Answering?
 
 Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
@@ -52,32 +76,6 @@ The model must extract the correct answer span from the given context based on t
 - Support for advanced language models.
 - Easy integration with popular tools and libraries.
 - Customizable and extendable for different datasets.
-
-## Directory Structure
-
-```plaintext
-ViEQA/
-│
-├── EQA/
-|   ├── config.py                 # Project configuration file
-|   ├── train.py                  # Main script for fine-tuning
-|   ├── requirements.txt          # List of required Python libraries
-|   ├── data/
-|   │   ├── __init__.py           # Init module for data
-|   │   ├── data_processing.py    # Data processing script
-|   │   └── dataset/
-|   │       └── ALQAC.csv         # Vietnamese dataset for QA
-|   ├── models/
-|   │   ├── __init__.py           # Init module for models
-|   │   └── eqa_model.py          # Model for Extractive Question Answering
-|   └── utils/
-|       ├── __init__.py           # Init module for utils
-|       └── metrics.py            # Script for calculating model metrics
-└── AG/
-    ├── ...
-    ├── ...
-    └── ...
-```
 
 ## System Requirements
 
