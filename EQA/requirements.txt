@@ -1,0 +1,11 @@
+pyvi
+transformers
+evaluate
+torch
+collections
+tqdm
+numpy
+pandas
+datasets
+huggingface_hub
+wandb
