@@ -58,20 +58,25 @@ The model must extract the correct answer span from the given context based on t
 ```plaintext
 ViEQA/
 │
-├── config.py                 # Project configuration file
-├── train.py                  # Main script for fine-tuning
-├── requirements.txt          # List of required Python libraries
-├── data/
-│   ├── __init__.py           # Init module for data
-│   ├── data_processing.py    # Data processing script
-│   └── dataset/
-│       └── ALQAC.csv         # Vietnamese dataset for QA
-├── models/
-│   ├── __init__.py           # Init module for models
-│   └── eqa_model.py          # Model for Extractive Question Answering
-└── utils/
-    ├── __init__.py           # Init module for utils
-    └── metrics.py            # Script for calculating model metrics
+├── EQA/
+|   ├── config.py                 # Project configuration file
+|   ├── train.py                  # Main script for fine-tuning
+|   ├── requirements.txt          # List of required Python libraries
+|   ├── data/
+|   │   ├── __init__.py           # Init module for data
+|   │   ├── data_processing.py    # Data processing script
+|   │   └── dataset/
+|   │       └── ALQAC.csv         # Vietnamese dataset for QA
+|   ├── models/
+|   │   ├── __init__.py           # Init module for models
+|   │   └── eqa_model.py          # Model for Extractive Question Answering
+|   └── utils/
+|       ├── __init__.py           # Init module for utils
+|       └── metrics.py            # Script for calculating model metrics
+└── AG/
+    ├── ...
+    ├── ...
+    └── ...
 ```
 
 ## System Requirements
