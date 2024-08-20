@@ -2,21 +2,21 @@
 
 ## Introduction
 
-**ViLQA** is a project focused on fine-tuning Question Answering models for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on pre-prepared datasets.
+**ViLQA** is a project focused on fine-tuning Question Answering models for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on extractive question answering datasets.
 
 ## Project Structure
 
 This project implements two approaches to Question Answering:
 
-1. **EQA (Extractive Question Answering)**: This approach extracts the answer directly from the given context.
+1. **MRC (Machine Reading Comprehension)**: This approach extracts the answer (span text) directly from the given context.
 2. **AG (Answer Generation)**: This approach generates the answer based on the context and question.
 
-The code for each approach is organized in separate directories (`EQA/` and `AG/`) for clarity and maintainability.
+The code for each approach is organized in separate directories (`MRC/` and `AG/`) for clarity and maintainability.
 
 ```plaintext
 ViEQA/
 │
-├── EQA/
+├── MRC/
 |   ├── config.py                 # Project configuration file
 |   ├── train.py                  # Main script for fine-tuning
 |   ├── requirements.txt          # List of required Python libraries
