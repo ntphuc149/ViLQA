@@ -72,7 +72,7 @@ The model must extract the correct answer span from the given context based on t
 
 ## Key Features
 
-- Fine-tuning Extractive Question Answering models on Vietnamese data.
+- Fine-tuning Question Answering models on Vietnamese data.
 - Support for advanced language models.
 - Easy integration with popular tools and libraries.
 - Customizable and extendable for different datasets.
