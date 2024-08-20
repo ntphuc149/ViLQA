@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**ViLQA** is a project focused on fine-tuning 2 types of Question Answering models (Extractive Question Answering and Answer Generation) for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on pre-prepared datasets.
+**ViLQA** is a project focused on fine-tuning Question Answering models for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on pre-prepared datasets.
 
 ## Project Structure
 
