@@ -32,9 +32,15 @@ ViEQA/
 |       ├── __init__.py           # Init module for utils
 |       └── metrics.py            # Script for calculating model metrics
 └── AG/
-    ├── ...
-    ├── ...
-    └── ...
+    ├── data/
+    │   └── ALQAC.csv             # Vietnamese dataset for QA
+    ├── data_processor.py         # Handles data preprocessing and formatting
+    ├── config.py                 # Contains configuration settings for the model and training process
+    ├── utils.py                  # Utility functions for text processing and evaluation metrics
+    ├── model.py                  # Defines the model architecture and loading functions
+    ├── train.py                  # Implements the training loop and related functions
+    ├── evaluate.py               # Contains functions for model evaluation and prediction generation
+    └── config.py                 # The main script to run the entire pipeline
 ```
 
 ### I. What is Extractive Question Answering?
