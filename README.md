@@ -43,7 +43,21 @@ ViEQA/
     └── config.py                 # The main script to run the entire pipeline
 ```
 
-### I. What is Extractive Question Answering?
+### Key Features
+
+- Fine-tuning Question Answering models on Vietnamese data.
+- Support for advanced language models.
+- Easy integration with popular tools and libraries.
+- Customizable and extendable for different datasets.
+
+## System Requirements
+
+- Python 3.7 or higher
+- Python libraries listed in requirements.txt
+
+## I. Machine Reading Comprehension
+
+### 1. What is Extractive Question Answering?
 
 Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
 
@@ -74,19 +88,6 @@ In this example:
 - Answer: "07 năm" (07 years)
 
 The model must extract the correct answer span from the given context based on the question.
-
-
-## Key Features
-
-- Fine-tuning Question Answering models on Vietnamese data.
-- Support for advanced language models.
-- Easy integration with popular tools and libraries.
-- Customizable and extendable for different datasets.
-
-## System Requirements
-
-- Python 3.7 or higher
-- Python libraries listed in requirements.txt
 
 ## Installation Guide
 
