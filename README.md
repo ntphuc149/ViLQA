@@ -6,7 +6,7 @@
 
 ## What is Extractive Question Answering?
 
-Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
+Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and must extract the answer directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
 
 Here's an example of Extractive Question Answering:
 
@@ -24,6 +24,13 @@ In this example:
 
 The model must extract the correct answer span from the given context based on the question.
 
+## Key Features
+
+- Fine-tuning Question Answering models on the Vietnamese Extractive Question Answering dataset.
+- Support for advanced language models (BERT, PhoBERT, XLM_RoBERTa, ViT5, BARTPho,...).
+- Easy integration with popular tools and libraries.
+- Customizable parameters for difference purposes.
+
 ## Project Structure
 
 This project implements two approaches to Extractive Question Answering:
@@ -34,7 +41,6 @@ This project implements two approaches to Extractive Question Answering:
 The code for each approach is organized in separate directories (`MRC/` and `AG/`) for clarity and maintainability.
 
 ```plaintext
-
 ViEQA/
 │
 ├── MRC/
@@ -64,21 +70,13 @@ ViEQA/
     └── config.py                 # The main script to run the entire pipeline
 ```
 
-### Key Features
-
-- Fine-tuning Question Answering models on Vietnamese data.
-- Support for advanced language models.
-- Easy integration with popular tools and libraries.
-- Customizable and extendable for different datasets.
-
 ## System Requirements
 
 - Python 3.7 or higher
 - Python libraries listed in requirements.txt
 
-## I. Machine Reading Comprehension
-
-### Problem Formulation
+## Problem Formulation
+### 1. Machine Reading Comprehension (MRC)
 
 Given:
 - A context C = [c1, c2, ..., cn], where ci are tokens in the context
@@ -86,6 +84,15 @@ Given:
 
 The goal is to find:
 - Start index s and end index e in C, so the span [cs, cs+1, ..., ce] answers the question Q.
+
+### 2. Answer Generation (AG)
+
+Given:
+* A context C = [c1, c2, ..., cn], where ci are tokens in the context
+* A question Q = [q1, q2, ..., qm], where qi are tokens in the question
+
+The goal of our Answer Generation (AG) approach is to:
+* Generate an answer A = [a1, a2, ..., ak], where ai are tokens in the generated answer
 
 ## Installation Guide
 
