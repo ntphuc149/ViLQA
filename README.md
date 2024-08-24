@@ -13,28 +13,8 @@ This project implements two approaches to Extractive Question Answering:
 
 The code for each approach is organized in separate directories (`MRC/` and `AG/`) for clarity and maintainability.
 
-## What is Extractive Question Answering?
-
-Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
-
-Here's an example of Extractive Question Answering:
-
-<figure>
-  <p align="center">
-    <img src="EQA/images/MRC.png" alt="Fig.1">
-  </p>
-  <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
-</figure>
-
-
-In this example:
-- Context: The legal text about the crime of appropriating or destroying relics of fallen soldiers
-- Question: "Chiếm đoạt di vật của tử sĩ có thể bị phạt tù lên đến bao nhiêu năm?" (How many years of imprisonment can one face for appropriating relics of fallen soldiers?)
-- Answer: "07 năm" (07 years)
-
-The model must extract the correct answer span from the given context based on the question.
-
 ```plaintext
+
 ViEQA/
 │
 ├── MRC/
@@ -63,6 +43,26 @@ ViEQA/
     ├── evaluate.py               # Contains functions for model evaluation and prediction generation
     └── config.py                 # The main script to run the entire pipeline
 ```
+
+## What is Extractive Question Answering?
+
+Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
+
+Here's an example of Extractive Question Answering:
+
+<figure>
+  <p align="center">
+    <img src="EQA/images/MRC.png" alt="Fig.1">
+  </p>
+  <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
+</figure>
+
+In this example:
+- Context: The legal text about the crime of appropriating or destroying relics of fallen soldiers
+- Question: "Chiếm đoạt di vật của tử sĩ có thể bị phạt tù lên đến bao nhiêu năm?" (How many years of imprisonment can one face for appropriating relics of fallen soldiers?)
+- Answer: "07 năm" (07 years)
+
+The model must extract the correct answer span from the given context based on the question.
 
 ### Key Features
 
