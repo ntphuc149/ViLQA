@@ -142,11 +142,25 @@ pip install -r requirements.txt
 ```
 
 ## Usage Instructions
-### 1. Configure the project:
+### With MRC approach
+#### 1. Configure the project:
 
 Update the parameters in config.py to suit your dataset and requirements.
 
-### 2. Fine-tune and evaluate the model:
+#### 2. Fine-tune and evaluate the model:
+
+Run the following command to start fine-tuning and evaluate the model:
+
+```python
+python train.py
+```
+
+### With AG approach
+#### 1. Configure the project:
+
+Update the parameters in config.py to suit your dataset and requirements.
+
+#### 2. Fine-tune and evaluate the model:
 
 Run the following command to start fine-tuning and evaluate the model:
 
