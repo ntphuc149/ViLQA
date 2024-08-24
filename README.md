@@ -100,14 +100,21 @@ The goal of our Answer Generation (AG) approach is to:
 
 ```python
 git clone https://github.com/ntphuc149/ViLQA.git
-cd ViLQA/EQA
 ```
+
+### FOR MRC APPROACH
+
+```python
+cd ViLQA/MRC
+```
+
 ### 2. Create a virtual environment (recommended):
 
 ```python
 python3 -m venv venv
 source venv/bin/activate
 ```
+
 ### 3. Install the dependencies:
 
 ```python
