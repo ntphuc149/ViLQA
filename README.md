@@ -141,6 +141,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+#### 2.4. Download the Vietnamese spaCy model:
+
+```python
+python -m spacy download vi_core_news_lg
+```
+
 ## Usage Instructions
 ### With MRC approach
 #### 1. Configure the project:
@@ -158,15 +164,19 @@ python train.py
 ### With AG approach
 #### 1. Configure the project:
 
-Update the parameters in config.py to suit your dataset and requirements.
+You can modify the `Config` class in `config.py` to adjust various parameters for each model.
 
 #### 2. Fine-tune and evaluate the model:
 
-Run the following command to start fine-tuning and evaluate the model:
+To run the entire pipeline (data processing, training, and evaluation) with a specific model:
 
 ```python
-python train.py
+python main.py <model_name>
 ```
+
+Supported models:
+- ViT5: `python main.py vit5`
+- BARTPho: `python main.py bartpho`
 
 ## Contribution
 
