@@ -96,26 +96,46 @@ The goal of our Answer Generation (AG) approach is to:
 
 ## Installation Guide
 
-### 1. Clone the repository:
+### I. Clone the repository:
 
 ```python
 git clone https://github.com/ntphuc149/ViLQA.git
 ```
 
-### FOR MRC APPROACH
+### II. Choose the approach to EQA
+#### 2.1. With MRC approach
 
 ```python
-cd ViLQA/MRC
+cd ViLQA/EQA
 ```
 
-### 2. Create a virtual environment (recommended):
+#### 2.2 Create a virtual environment (recommended):
 
 ```python
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Install the dependencies:
+#### 2.3. Install the dependencies:
+
+```python
+pip install -r requirements.txt
+```
+
+#### 2.2. With AG approach
+
+```python
+cd ViLQA/AG
+```
+
+#### 2.2 Create a virtual environment (recommended):
+
+```python
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### 2.3. Install the dependencies:
 
 ```python
 pip install -r requirements.txt
