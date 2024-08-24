@@ -6,12 +6,33 @@
 
 ## Project Structure
 
-This project implements two approaches to Question Answering:
+This project implements two approaches to Extractive Question Answering:
 
 1. **MRC (Machine Reading Comprehension)**: This approach extracts the answer (span text) directly from the given context.
 2. **AG (Answer Generation)**: This approach generates the answer based on the context and question.
 
 The code for each approach is organized in separate directories (`MRC/` and `AG/`) for clarity and maintainability.
+
+## What is Extractive Question Answering?
+
+Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
+
+Here's an example of Extractive Question Answering:
+
+<figure>
+  <p align="center">
+    <img src="EQA/images/MRC.png" alt="Fig.1">
+  </p>
+  <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
+</figure>
+
+
+In this example:
+- Context: The legal text about the crime of appropriating or destroying relics of fallen soldiers
+- Question: "Chiếm đoạt di vật của tử sĩ có thể bị phạt tù lên đến bao nhiêu năm?" (How many years of imprisonment can one face for appropriating relics of fallen soldiers?)
+- Answer: "07 năm" (07 years)
+
+The model must extract the correct answer span from the given context based on the question.
 
 ```plaintext
 ViEQA/
@@ -57,10 +78,6 @@ ViEQA/
 
 ## I. Machine Reading Comprehension
 
-### 1. What is Extractive Question Answering?
-
-Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and needs to extract the answer to the question directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
-
 ### Problem Formulation
 
 Given:
@@ -69,25 +86,6 @@ Given:
 
 The goal is to find:
 - Start index s and end index e in C, so the span [cs, cs+1, ..., ce] answers the question Q.
-
-### Example
-
-Here's an example of Extractive Question Answering:
-
-<figure>
-  <p align="center">
-    <img src="EQA/images/MRC.png" alt="Fig.1">
-  </p>
-  <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
-</figure>
-
-
-In this example:
-- Context: The legal text about the crime of appropriating or destroying relics of fallen soldiers
-- Question: "Chiếm đoạt di vật của tử sĩ có thể bị phạt tù lên đến bao nhiêu năm?" (How many years of imprisonment can one face for appropriating relics of fallen soldiers?)
-- Answer: "07 năm" (07 years)
-
-The model must extract the correct answer span from the given context based on the question.
 
 ## Installation Guide
 
