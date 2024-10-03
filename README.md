@@ -1,14 +1,7 @@
-# ViLQA: Vietnamese Legal Question Answering
+# Vietnamese Legal Question Answering: An Experimental Study [paper]
 
-## Introduction
-
-**ViLQA** is a project focused on fine-tuning Question Answering models for Vietnamese legal text. This project aims to enhance the performance of models in answering questions based on Vietnamese legal documents, particularly on extractive question answering datasets.
-
-## What is Extractive Question Answering?
-
-Extractive Question Answering (EQA) is a Natural Language Processing task where the model is given a question and a context (usually a paragraph or a document) and must extract the answer directly from the context. The key assumption in EQA is that the answer is a continuous span of text within the given context.
-
-Here's an example of Extractive Question Answering:
+This paper investigates the legal question-answering (QA) task in Vietnamese. Different from prior studies that only report results on the task of machine reading comprehension (MRC), we compare the strong QA models in two scenarios: MRC (span extraction) and answer generation (AG) (text generation). To do that, we first created a new dataset, namely ViBidLQA, using the bidding law. The dataset is synthesized by using a large language model (LLM) and corrected by two domain experts. After that, we train a set of robust MRC and AG models on the ViBidLQA dataset and predict on both ALQAC and the test set of ViBidLQA. Experimental results show that for the MRC scenario, vi-mrc-large achieves the best scores while for the AG scenario, ViT5 obtains good performance. The results also indicate that the
+new ViBidLQA dataset contributes to improving the performance of MRC models for domain adaptation on ALQAC
 
 <figure>
   <p align="center">
@@ -17,83 +10,32 @@ Here's an example of Extractive Question Answering:
   <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
 </figure>
 
-In this example:
-- Context: The legal text about the crime of appropriating or destroying relics of fallen soldiers
-- Question: "Chiếm đoạt di vật của tử sĩ có thể bị phạt tù lên đến bao nhiêu năm?" (How many years of imprisonment can one face for appropriating relics of fallen soldiers?)
-- Answer: "07 năm" (07 years)
-
-The model must extract the correct answer span from the given context based on the question.
-
-## Key Features
-
-- Fine-tuning Question Answering models on the Vietnamese Extractive Question Answering dataset.
-- Support for advanced language models (BERT, PhoBERT, XLM_RoBERTa, ViT5, BARTPho,...).
-- Easy integration with popular tools and libraries.
-- Customizable parameters for difference purposes.
-
-## Project Structure
-
-This project implements two approaches to Extractive Question Answering:
-
-1. **MRC (Machine Reading Comprehension)**: This approach extracts the answer (span text) directly from the given context.
-2. **AG (Answer Generation)**: This approach generates the answer based on the context and question.
-
-The code for each approach is organized in separate directories (`MRC/` and `AG/`) for clarity and maintainability.
-
-```plaintext
-ViEQA/
-│
-├── MRC/
-|   ├── config.py                 # Project configuration file
-|   ├── train.py                  # Main script for fine-tuning
-|   ├── requirements.txt          # List of required Python libraries
-|   ├── data/
-|   │   ├── __init__.py           # Init module for data
-|   │   ├── data_processing.py    # Data processing script
-|   │   └── dataset/
-|   │       └── ALQAC.csv         # Vietnamese dataset for QA
-|   ├── models/
-|   │   ├── __init__.py           # Init module for models
-|   │   └── eqa_model.py          # Model for Extractive Question Answering
-|   └── utils/
-|       ├── __init__.py           # Init module for utils
-|       └── metrics.py            # Script for calculating model metrics
-└── AG/
-    ├── data/
-    │   └── ALQAC.csv             # Vietnamese dataset for QA
-    ├── data_processor.py         # Handles data preprocessing and formatting
-    ├── config.py                 # Contains configuration settings for the model and training process
-    ├── utils.py                  # Utility functions for text processing and evaluation metrics
-    ├── model.py                  # Defines the model architecture and loading functions
-    ├── train.py                  # Implements the training loop and related functions
-    ├── evaluate.py               # Contains functions for model evaluation and prediction generation
-    └── config.py                 # The main script to run the entire pipeline
-```
-
-## System Requirements
-
-- Python 3.7 or higher
-- Python libraries listed in requirements.txt
-
 ## Problem Formulation
 ### 1. Machine Reading Comprehension (MRC)
 
-Given:
-- A context C = [c1, c2, ..., cn], where ci are tokens in the context
-- A question Q = [q1, q2, ..., qm], where qi are tokens in the question
-
-The goal is to find:
-- Start index s and end index e in C, so the span [cs, cs+1, ..., ce] answers the question Q.
+QA is formulated as an MRC problem. Given a context $C = {w_1, ..., w_n}$ and question $Q$, the goal is to determine start $(s)$ and end $(e)$ token of the answer $A$, which form a span within $C$. From the start token $s$ and end token $e$, the start position and end position are obtained.
+MRC models transform $C$ and $Q$ into contextual representations $H_C$ and $H_Q$, apply attention:
+\begin{equation}
+A = \text{softmax}(H_Q \cdot H_C^T)
+\end{equation}
+Then the model predicts answer span positions as:
+\begin{equation}
+    (s^*, e^*) = argmax_{(s, e)} logits_{start}(s) \cdot logits_{end}(e) 
+\end{equation}
 
 ### 2. Answer Generation (AG)
 
-Given:
-* A context C = [c1, c2, ..., cn], where ci are tokens in the context
-* A question Q = [q1, q2, ..., qm], where qi are tokens in the question
+Answer generation models produce a suitable answer \( A \) by extracting tokens from the context \( C \). 
 
-The goal of our Answer Generation (AG) approach is to:
-* Generate an answer A = [a1, a2, ..., ak], where ai are tokens in the generated answer
-
+The training process uses the contextual vector $\boldsymbol{h}$ from the encoder for generating output tokens $y_t$ by the softmax function as follows.
+\begin{equation}
+    p_t = softmax(f(\boldsymbol{h}, y_{<t}, \theta))
+\end{equation}
+where $\theta$ is the weight matrix. The objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
+\begin{equation}
+\mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log {(p_t \mid A_{<k}, \theta)}
+\end{equation}
+where $k$ is the number of tokens in $A$. For inference, given an input context with the question, the trained AG models generate the corresponding question.
 ## Installation Guide
 
 ### I. Clone the repository:
