@@ -1,3 +1,11 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+
 # Vietnamese Legal Question Answering: An Experimental Study [paper]
 
 This paper investigates the legal question-answering (QA) task in Vietnamese. Different from prior studies that only report results on the task of machine reading comprehension (MRC), we compare the strong QA models in two scenarios: MRC (span extraction) and answer generation (AG) (text generation). To do that, we first created a new dataset, namely ViBidLQA, using the bidding law. The dataset is synthesized by using a large language model (LLM) and corrected by two domain experts. After that, we train a set of robust MRC and AG models on the ViBidLQA dataset and predict on both ALQAC and the test set of ViBidLQA. Experimental results show that for the MRC scenario, vi-mrc-large achieves the best scores while for the AG scenario, ViT5 obtains good performance. The results also indicate that the
@@ -34,7 +42,9 @@ p_t = softmax(f(h, y_<t, θ))
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
-![Equation](https://latex.codecogs.com/gif.latex?\mathcal{L}%20=%20-\frac{1}{k}%20\sum_{t=1}^{k}%20\log%20\left(%20p_t%20\mid%20A_{<k},%20\theta%20\right))
+$$
+\mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log \left( p_t \mid A_{<k}, \theta \right)
+$$
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
 
