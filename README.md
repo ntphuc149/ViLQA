@@ -16,29 +16,37 @@ new ViBidLQA dataset contributes to improving the performance of MRC models for 
 QA is formulated as an MRC problem. Given a context $C = {w_1, ..., w_n}$ and question $Q$, the goal is to determine start $(s)$ and end $(e)$ token of the answer $A$, which form a span within $C$. From the start token $s$ and end token $e$, the start position and end position are obtained.
 MRC models transform $C$ and $Q$ into contextual representations $H_C$ and $H_Q$, apply attention:
 
-<div align="left">
-  
 $$
 A = \text{softmax}(H_Q \cdot H_C^T)
 $$
 
-</div>
-
 Then the model predicts answer span positions as:
+
+<div align="center">
 
 ![Equation](https://latex.codecogs.com/gif.latex?(s^*,%20e^*)%20=%20\arg\max_{(s,%20e)}%20\text{logits}_{\text{start}}(s)%20\cdot%20\text{logits}_{\text{end}}(e))
 
+</div>
+
 ### 2. Answer Generation (AG)
 
-Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$. 
+Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$.
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
+<div align="center">
+
 ![Equation](https://latex.codecogs.com/gif.latex?p_t%20=%20\text{softmax}(f(\boldsymbol{h},%20y_{<t},%20\theta)))
+
+</div>
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
+<div align="center">
+
 ![Equation](https://latex.codecogs.com/gif.latex?\mathcal{L}%20=%20-\frac{1}{k}%20\sum_{t=1}^{k}%20\log%20\left(%20p_t%20\mid%20A_{<k},%20\theta%20\right))
+
+</div>
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
 
