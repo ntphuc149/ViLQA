@@ -43,7 +43,7 @@ $$
 $$
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
-For more details, access the repo: https://github.com/Shaun-le/ViQAG. Int this repo. I'll dive deeply into the Machine Reading Comprehension (MRC) approach.
+For more details, access the repo: https://github.com/Shaun-le/ViQAG. In this repo. I'll dive deeply into the Machine Reading Comprehension (MRC) approach.
 
 ## Installation Guide
 
