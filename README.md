@@ -30,7 +30,7 @@ Answer generation models produce a suitable answer $A$ by extracting tokens from
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
-![Equation](https://latex.codecogs.com/gif.latex?p_t%20=%20\text{softmax}(f(\boldsymbol{h},%20y_{<t},%20\theta))
+![Equation](https://latex.codecogs.com/gif.latex?p_t%20=%20\text{softmax}(f(\boldsymbol{h},%20y_{<t},%20\theta)))
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
