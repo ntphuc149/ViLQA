@@ -3,13 +3,6 @@
 This paper investigates the legal question-answering (QA) task in Vietnamese. Different from prior studies that only report results on the task of machine reading comprehension (MRC), we compare the strong QA models in two scenarios: MRC (span extraction) and answer generation (AG) (text generation). To do that, we first created a new dataset, namely ViBidLQA, using the bidding law. The dataset is synthesized by using a large language model (LLM) and corrected by two domain experts. After that, we train a set of robust MRC and AG models on the ViBidLQA dataset and predict on both ALQAC and the test set of ViBidLQA. Experimental results show that for the MRC scenario, vi-mrc-large achieves the best scores while for the AG scenario, ViT5 obtains good performance. The results also indicate that the
 new ViBidLQA dataset contributes to improving the performance of MRC models for domain adaptation on ALQAC
 
-<figure>
-  <p align="center">
-    <img src="EQA/images/MRC.png" alt="Fig.1">
-  </p>
-  <p align="center"><normal>Fig.1: An example of Extractive Question Answering</strong></p>
-</figure>
-
 ## Problem Formulation
 ### 1. Machine Reading Comprehension (MRC)
 
@@ -36,39 +29,37 @@ where $\theta$ is the weight matrix. The objective is to minimize the negative l
 \mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log {(p_t \mid A_{<k}, \theta)}
 \end{equation}
 where $k$ is the number of tokens in $A$. For inference, given an input context with the question, the trained AG models generate the corresponding question.
+
+For more detail, access this repo: https://github.com/Shaun-le/ViQAG. Int this repo. I'll dive deeply into Machine Reading Comprehension (MRC) approach.
+
 ## Installation Guide
 
-### I. Clone the repository:
+### 1.1. Clone the repository:
 
 ```python
 git clone https://github.com/ntphuc149/ViLQA.git
+cd ViLQA
 ```
 
-### II. Choose the approach to EQA
-#### 2.1. With MRC approach
-#### 2.1.1 Create a virtual environment (recommended):
+### 1.2. Create a virtual environment (recommended):
 
 ```python
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-#### 2.3. Install the dependencies:
+### 1.3. Install the dependencies:
 
 ```python
 pip install -r requirements.txt
 ```
 
-#### 2.2. With MRC approach
-
-For more detail, access this repo: https://github.com/Shaun-le/ViQAG
-
 ## Usage Instructions
-#### 1. Configure the project:
+### 2.1. Configure the project:
 
 Update the parameters in config.py to suit your dataset and requirements.
 
-#### 2. Fine-tune and evaluate the model:
+### 2.2. Fine-tune and evaluate the model:
 
 Run the following command to start fine-tuning and evaluate the model:
 
