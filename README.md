@@ -22,7 +22,7 @@ $$
 
 Then the model predicts answer span positions as:
 
-(s*, e*) = argmax_{(s, e)} [logits_start(s) * logits_end(e)]
+![Equation](https://latex.codecogs.com/gif.latex?(s^*,%20e^*)%20=%20\arg\max_{(s,%20e)}%20\text{logits}_{\text{start}}(s)%20\cdot%20\text{logits}_{\text{end}}(e))
 
 ### 2. Answer Generation (AG)
 
@@ -30,12 +30,11 @@ Answer generation models produce a suitable answer $A$ by extracting tokens from
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
-p_t = softmax(f(h, y_<t, θ))
+![Equation](https://latex.codecogs.com/gif.latex?p_t%20=%20\text{softmax}(f(\boldsymbol{h},%20y_{<t},%20\theta))
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
-<p align="center">
-![Equation](https://latex.codecogs.com/gif.latex?\mathcal{L}%20=%20-\frac{1}{k}%20\sum_{t=1}^{k}%20\log%20\left(%20p_t%20\mid%20A_{<k},%20\theta%20\right))                                               </p>
+![Equation](https://latex.codecogs.com/gif.latex?\mathcal{L}%20=%20-\frac{1}{k}%20\sum_{t=1}^{k}%20\log%20\left(%20p_t%20\mid%20A_{<k},%20\theta%20\right))
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
 
