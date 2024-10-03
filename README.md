@@ -22,7 +22,7 @@ $$
 A = \text{softmax}(H_Q \cdot H_C^T)
 $$
 
-<\div>
+</div>
 
 Then the model predicts answer span positions as:
 
