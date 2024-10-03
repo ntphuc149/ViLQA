@@ -16,9 +16,11 @@ new ViBidLQA dataset contributes to improving the performance of MRC models for 
 QA is formulated as an MRC problem. Given a context $C = {w_1, ..., w_n}$ and question $Q$, the goal is to determine start $(s)$ and end $(e)$ token of the answer $A$, which form a span within $C$. From the start token $s$ and end token $e$, the start position and end position are obtained.
 MRC models transform $C$ and $Q$ into contextual representations $H_C$ and $H_Q$, apply attention:
 
+<div align="left">
 $$
 A = \text{softmax}(H_Q \cdot H_C^T)
 $$
+<\div>
 
 Then the model predicts answer span positions as:
 
