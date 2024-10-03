@@ -81,11 +81,13 @@ python train.py
 ```
 
 ## Contribution
-
 We welcome contributions to this project. Please create a pull request or open an issue to discuss your ideas for improvement.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Access our new dataset ViBidLQA
+To access our data, please take the survey at: https://forms.gle/Ti4d31xKoa78Hud69
 
 ## Citation
 Coming soon
