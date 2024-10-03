@@ -30,15 +30,11 @@ Answer generation models produce a suitable answer $A$ by extracting tokens from
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
-$$
-p_t = \text{softmax}(f(\boldsymbol{h}, y_{<t}, \theta))
-$$
+p_t = softmax(f(h, y_<t, θ))
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
-$$
-\mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log {(p_t \mid A_{<k}, \theta)}
-$$
+L = -(1/k) * sum_{t=1}^{k} log(p_t | A_<k, θ)
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
 
