@@ -5,7 +5,7 @@ new ViBidLQA dataset contributes to improving the performance of MRC models for 
 
 <figure>
   <p align="center">
-    <img src="EQA/images/MRC.png" alt="Fig.1">
+    <img src="images/What is QA.png" alt="Fig.1">
   </p>
   <p align="center"><normal>Fig.1: An example of Question Answering</strong></p>
 </figure>
