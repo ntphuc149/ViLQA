@@ -46,12 +46,7 @@ git clone https://github.com/ntphuc149/ViLQA.git
 
 ### II. Choose the approach to EQA
 #### 2.1. With MRC approach
-
-```python
-cd ViLQA/EQA
-```
-
-#### 2.2 Create a virtual environment (recommended):
+#### 2.1.1 Create a virtual environment (recommended):
 
 ```python
 python3 -m venv venv
@@ -64,33 +59,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### 2.2. With AG approach
+#### 2.2. With MRC approach
 
-```python
-cd ViLQA/AG
-```
-
-#### 2.2 Create a virtual environment (recommended):
-
-```python
-python3 -m venv venv
-source venv/bin/activate
-```
-
-#### 2.3. Install the dependencies:
-
-```python
-pip install -r requirements.txt
-```
-
-#### 2.4. Download the Vietnamese spaCy model:
-
-```python
-python -m spacy download vi_core_news_lg
-```
+For more detail, access this repo: https://github.com/Shaun-le/ViQAG
 
 ## Usage Instructions
-### With MRC approach
 #### 1. Configure the project:
 
 Update the parameters in config.py to suit your dataset and requirements.
@@ -103,26 +76,12 @@ Run the following command to start fine-tuning and evaluate the model:
 python train.py
 ```
 
-### With AG approach
-#### 1. Configure the project:
-
-You can modify the `Config` class in `config.py` to adjust various parameters for each model.
-
-#### 2. Fine-tune and evaluate the model:
-
-To run the entire pipeline (data processing, training, and evaluation) with a specific model:
-
-```python
-python main.py <model_name>
-```
-
-Supported models:
-- ViT5: `python main.py vit5`
-- BARTPho: `python main.py bartpho`
-
 ## Contribution
 
 We welcome contributions to this project. Please create a pull request or open an issue to discuss your ideas for improvement.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Citation
+Coming soon
