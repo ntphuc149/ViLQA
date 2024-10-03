@@ -17,27 +17,32 @@ QA is formulated as an MRC problem. Given a context $C = {w_1, ..., w_n}$ and qu
 MRC models transform $C$ and $Q$ into contextual representations $H_C$ and $H_Q$, apply attention:
 
 $$
-p_t = \text{softmax}\left( f\left(\boldsymbol{h}, y_{<t}, \theta \right) \right)
+A = \text{softmax}(H_Q \cdot H_C^T)
 $$
 
 Then the model predicts answer span positions as:
 
-$$ (s^*, e^*) = \arg\max_{(s, e)} \left{[ \text{logits}_{\text{start}}(s) \cdot \text{logits}_{\text{end}}(e) \right]} $$
+$$
+(s^*, e^*) = \arg\max_{(s, e)} \text{logits}_{\text{start}}(s) \cdot \text{logits}_{\text{end}}(e) 
+$$
 
 ### 2. Answer Generation (AG)
 
-Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$.
+Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$. 
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
-$$ p_t = \text{softmax}(f(h, y_{<t}, \theta)) $$
+$$
+p_t = \text{softmax}(f(\boldsymbol{h}, y_{<t}, \theta))
+$$
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
-$$ \mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log \left( p_t \mid A_{<k}, \theta \right) $$
+$$
+\mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log {(p_t \mid A_{<k}, \theta)}
+$$
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
-
 For more details, access the repo: https://github.com/Shaun-le/ViQAG. Int this repo. I'll dive deeply into the Machine Reading Comprehension (MRC) approach.
 
 ## Installation Guide
