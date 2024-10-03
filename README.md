@@ -23,12 +23,12 @@ $$
 Then the model predicts answer span positions as:
 
 $$
-(s^*, e^*) = \arg\max_{(s, e)} \text{logits}_{\text{start}}(s) \cdot \text{logits}_{\text{end}}(e) 
+(s^*, e^*) = \arg\max_{(s, e)} \text{logits}_{\text{start}}(s) \cdot \text{logits}_{\text{end}}(e)
 $$
 
 ### 2. Answer Generation (AG)
 
-Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$. 
+Answer generation models produce a suitable answer $A$ by extracting tokens from the context $C$.
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder to generate output tokens $y_t$ by the softmax function.
 
