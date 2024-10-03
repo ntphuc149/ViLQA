@@ -34,7 +34,7 @@ p_t = softmax(f(h, y_<t, θ))
 
 where $\theta$ is the weight matrix, the objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
 
-L = -(1/k) * sum_{t=1}^{k} log(p_t | A_<k, θ)
+![Equation](https://latex.codecogs.com/gif.latex?\mathcal{L}%20=%20-\frac{1}{k}%20\sum_{t=1}^{k}%20\log%20\left(%20p_t%20\mid%20A_{<k},%20\theta%20\right))
 
 where $k$ is the number of tokens in $A$, for inference, given an input context with the question, the trained AG models generate the corresponding question.
 
