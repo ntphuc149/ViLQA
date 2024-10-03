@@ -85,9 +85,8 @@ We welcome contributions to this project. Please create a pull request or open a
 
 ## ViBidLawQA
 We introduce a demo application system ViBidLawQA at [here]([https://vnqag.000webhostapp.com](https://ntphuc149-vibidlawqa.hf.space/)). The brief introduction of the system was also shown in a video ↓↓↓
-<p align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/wfmGcs50sWI?si=L1x4tRe6Kbl_MPIS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wfmGcs50sWI?si=L1x4tRe6Kbl_MPIS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 
 ## License
