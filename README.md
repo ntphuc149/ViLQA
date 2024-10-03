@@ -8,10 +8,13 @@ new ViBidLQA dataset contributes to improving the performance of MRC models for 
 
 QA is formulated as an MRC problem. Given a context $C = {w_1, ..., w_n}$ and question $Q$, the goal is to determine start $(s)$ and end $(e)$ token of the answer $A$, which form a span within $C$. From the start token $s$ and end token $e$, the start position and end position are obtained.
 MRC models transform $C$ and $Q$ into contextual representations $H_C$ and $H_Q$, apply attention:
+
 \begin{equation}
 A = \text{softmax}(H_Q \cdot H_C^T)
 \end{equation}
+
 Then the model predicts answer span positions as:
+
 \begin{equation}
     (s^*, e^*) = argmax_{(s, e)} logits_{start}(s) \cdot logits_{end}(e) 
 \end{equation}
@@ -21,16 +24,20 @@ Then the model predicts answer span positions as:
 Answer generation models produce a suitable answer \( A \) by extracting tokens from the context \( C \). 
 
 The training process uses the contextual vector $\boldsymbol{h}$ from the encoder for generating output tokens $y_t$ by the softmax function as follows.
+
 \begin{equation}
     p_t = softmax(f(\boldsymbol{h}, y_{<t}, \theta))
 \end{equation}
+
 where $\theta$ is the weight matrix. The objective is to minimize the negative likelihood of the conditional probability between the predicted outputs and the gold answer $A$.
+
 \begin{equation}
 \mathcal{L} = -\frac{1}{k} \sum_{t=1}^{k} \log {(p_t \mid A_{<k}, \theta)}
 \end{equation}
+
 where $k$ is the number of tokens in $A$. For inference, given an input context with the question, the trained AG models generate the corresponding question.
 
-For more detail, access this repo: https://github.com/Shaun-le/ViQAG. Int this repo. I'll dive deeply into Machine Reading Comprehension (MRC) approach.
+For more detail, access repo: https://github.com/Shaun-le/ViQAG. Int this repo. I'll dive deeply into Machine Reading Comprehension (MRC) approach.
 
 ## Installation Guide
 
