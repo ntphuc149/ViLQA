@@ -22,9 +22,7 @@ $$
 
 Then the model predicts answer span positions as:
 
-$$
-(s^*, e^*) = \arg\max_{(s, e)} \text{logits}_{\text{start}}(s) \cdot \text{logits}_{\text{end}}(e) 
-$$
+(s*, e*) = argmax_{(s, e)} [logits_start(s) * logits_end(e)]
 
 ### 2. Answer Generation (AG)
 
