@@ -1,4 +1,4 @@
-# Vietnamese Legal Question Answering: An Experimental Study [paper]
+# [Vietnamese Legal Question Answering: An Experimental Study](https://ieeexplore.ieee.org/abstract/document/11063637)
 
 This paper investigates the legal question-answering (QA) task in Vietnamese. Different from prior studies that only report results on the task of machine reading comprehension (MRC), we compare the strong QA models in two scenarios: MRC (span extraction) and answer generation (AG) (text generation). To do that, we first created a new dataset, namely ViBidLQA, using the bidding law. The dataset is synthesized by using a large language model (LLM) and corrected by two domain experts. After that, we train a set of robust MRC and AG models on the ViBidLQA dataset and predict on both ALQAC and the test set of ViBidLQA. Experimental results show that for the MRC scenario, vi-mrc-large achieves the best scores while for the AG scenario, ViT5 obtains good performance. The results also indicate that the
 new ViBidLQA dataset contributes to improving the performance of MRC models for domain adaptation on ALQAC
@@ -103,4 +103,15 @@ This project is licensed under the MIT License. See the LICENSE file for details
 To access our data, please take the survey at: https://forms.gle/Ti4d31xKoa78Hud69
 
 ## Citation
-Coming soon
+```
+@INPROCEEDINGS{11063637,
+  author={Ha, Nguyen Thu and Nguyen, Truong-Phuc and Trung, Khang T. and Le, Huu-Loi and Huong, Le Thi Viet and Nguyen, Chi Thanh and Nguyen, Minh-Tien},
+  booktitle={2024 16th International Conference on Knowledge and System Engineering (KSE)}, 
+  title={Vietnamese Legal Question Answering: An Experimental Study}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={440-446},
+  keywords={Knowledge engineering;Adaptation models;Law;Large language models;Predictive models;Benchmark testing;Systems engineering and theory;Question answering (information retrieval);Data models;Legal Question Answering;Legal AI},
+  doi={10.1109/KSE63888.2024.11063637}}
+```
