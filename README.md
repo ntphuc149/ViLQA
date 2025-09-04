@@ -100,7 +100,7 @@ We introduce a demo application system ViBidLawQA at [here](https://ntphuc149-vi
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Access our new dataset ViBidLQA
-To access our data, please take the survey at: https://forms.gle/Ti4d31xKoa78Hud69
+To access our data, please visit here: https://huggingface.co/datasets/ntphuc149/ViBidLQA_v1
 
 ## Citation
 ```
