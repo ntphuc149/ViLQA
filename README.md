@@ -104,14 +104,14 @@ To access our data, please visit here: https://huggingface.co/datasets/ntphuc149
 
 ## Citation
 ```
-@INPROCEEDINGS{11309584,
-  author={Nguyen, Truong-Phuc and Nguyen, Quy-Nhan and Phan, Manh-Cuong and Cao, Chi-Hai and Duong, Trinh-Hoai-An and Nguyen, Minh-Tien},
-  booktitle={2025 17th International Conference on Knowledge and System Engineering (KSE)}, 
-  title={UTEHY-NLU@ALQAC 2025: Dynamic Weighted Ensemble and Adaptive Reasoning for Vietnamese Legal Text Processing}, 
-  year={2025},
+@INPROCEEDINGS{11063637,
+  author={Ha, Nguyen Thu and Nguyen, Truong-Phuc and Trung, Khang T. and Le, Huu-Loi and Huong, Le Thi Viet and Nguyen, Chi Thanh and Nguyen, Minh-Tien},
+  booktitle={2024 16th International Conference on Knowledge and System Engineering (KSE)}, 
+  title={Vietnamese Legal Question Answering: An Experimental Study}, 
+  year={2024},
   volume={},
   number={},
-  pages={1-5},
-  keywords={Adaptation models;Analytical models;Accuracy;Law;Terminology;Large language models;Cognition;Question answering (information retrieval);Ensemble learning;Text processing;Legal AI;information retrieval;question answering;large language models;ensemble models;reasoning models},
-  doi={10.1109/KSE68178.2025.11309584}}
+  pages={440-446},
+  keywords={Knowledge engineering;Adaptation models;Law;Large language models;Predictive models;Benchmark testing;Systems engineering and theory;Question answering (information retrieval);Data models;Legal Question Answering;Legal AI},
+  doi={10.1109/KSE63888.2024.11063637}}
 ```
